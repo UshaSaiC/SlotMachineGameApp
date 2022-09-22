@@ -11,6 +11,7 @@
 		B2F6479528DCE15700E17A65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6479428DCE15700E17A65 /* ContentView.swift */; };
 		B2F6479728DCE15900E17A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F6479628DCE15900E17A65 /* Assets.xcassets */; };
 		B2F6479A28DCE15900E17A65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F6479928DCE15900E17A65 /* Preview Assets.xcassets */; };
+		B2F647A128DCE2C600E17A65 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = B2F647A028DCE2C600E17A65 /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		B2F6479428DCE15700E17A65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B2F6479628DCE15900E17A65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2F6479928DCE15900E17A65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B2F647A028DCE2C600E17A65 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		B2F647A428DCE35200E17A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,11 @@
 		B2F6479128DCE15700E17A65 /* SlotMachineGameApp */ = {
 			isa = PBXGroup;
 			children = (
+				B2F647A428DCE35200E17A65 /* Info.plist */,
 				B2F6479228DCE15700E17A65 /* SlotMachineGameAppApp.swift */,
-				B2F6479428DCE15700E17A65 /* ContentView.swift */,
+				B2F647A228DCE2FD00E17A65 /* Views */,
+				B2F647A328DCE30C00E17A65 /* Helpers */,
+				B2F647A028DCE2C600E17A65 /* Sounds */,
 				B2F6479628DCE15900E17A65 /* Assets.xcassets */,
 				B2F6479828DCE15900E17A65 /* Preview Content */,
 			);
@@ -65,6 +71,21 @@
 				B2F6479928DCE15900E17A65 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B2F647A228DCE2FD00E17A65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6479428DCE15700E17A65 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B2F647A328DCE30C00E17A65 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F647A128DCE2C600E17A65 /* Sounds in Resources */,
 				B2F6479A28DCE15900E17A65 /* Preview Assets.xcassets in Resources */,
 				B2F6479728DCE15900E17A65 /* Assets.xcassets in Resources */,
 			);
@@ -269,9 +291,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SlotMachineGameApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SlotMachineGameApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -297,9 +319,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SlotMachineGameApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SlotMachineGameApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
