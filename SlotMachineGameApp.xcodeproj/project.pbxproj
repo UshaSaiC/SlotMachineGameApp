@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B20F507D28DD5ABC005A730E /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20F507C28DD5ABC005A730E /* LogoView.swift */; };
+		B20F507F28DD5AF6005A730E /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20F507E28DD5AF6005A730E /* Modifiers.swift */; };
+		B20F508128DD5FB5005A730E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20F508028DD5FB5005A730E /* Extensions.swift */; };
 		B2F6479328DCE15700E17A65 /* SlotMachineGameAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6479228DCE15700E17A65 /* SlotMachineGameAppApp.swift */; };
 		B2F6479528DCE15700E17A65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6479428DCE15700E17A65 /* ContentView.swift */; };
 		B2F6479728DCE15900E17A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F6479628DCE15900E17A65 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B20F507C28DD5ABC005A730E /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		B20F507E28DD5AF6005A730E /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		B20F508028DD5FB5005A730E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B2F6478F28DCE15700E17A65 /* SlotMachineGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachineGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F6479228DCE15700E17A65 /* SlotMachineGameAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineGameAppApp.swift; sourceTree = "<group>"; };
 		B2F6479428DCE15700E17A65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B2F6479428DCE15700E17A65 /* ContentView.swift */,
+				B20F507C28DD5ABC005A730E /* LogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -84,6 +91,8 @@
 		B2F647A328DCE30C00E17A65 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B20F507E28DD5AF6005A730E /* Modifiers.swift */,
+				B20F508028DD5FB5005A730E /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -159,7 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20F508128DD5FB5005A730E /* Extensions.swift in Sources */,
+				B20F507F28DD5AF6005A730E /* Modifiers.swift in Sources */,
 				B2F6479528DCE15700E17A65 /* ContentView.swift in Sources */,
+				B20F507D28DD5ABC005A730E /* LogoView.swift in Sources */,
 				B2F6479328DCE15700E17A65 /* SlotMachineGameAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
