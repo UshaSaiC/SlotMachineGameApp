@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
+    let haptics = UINotificationFeedbackGenerator()
     
-    // integer property will return the integer value associated with HighScore key in user defaults
     @State private var highScore: Int = UserDefaults.standard.integer(forKey: "HighScore")
     @State private var coins: Int = 100
     @State private var betAmount: Int = 10
@@ -27,6 +27,8 @@ struct ContentView: View {
         reels = reels.map({ _ in
             Int.random(in: 0...symbols.count-1)
         })
+        playSound(sound: "spin", type: "mp3")
+        haptics.notificationOccurred(.success)
     }
     
     func checkWinning() {
@@ -34,6 +36,8 @@ struct ContentView: View {
             playerWins()
             if coins > highScore {
                 newHighScore()
+            } else {
+                playSound(sound: "win", type: "mp3")
             }
             
         } else {
@@ -48,6 +52,7 @@ struct ContentView: View {
     func newHighScore(){
         highScore = coins
         UserDefaults.standard.set(highScore, forKey: "HighScore")
+        playSound(sound: "high-score", type: "mp3")
     }
     
     func playerLoses() {
@@ -58,17 +63,22 @@ struct ContentView: View {
         betAmount = 20
         isActiveBet20 = true
         isActiveBet10 = false
+        playSound(sound: "casino-chips", type: "mp3")
+        haptics.notificationOccurred(.success)
     }
     
     func activateBet10() {
         betAmount = 10
         isActiveBet20 = false
         isActiveBet10 = true
+        playSound(sound: "casino-chips", type: "mp3")
+        haptics.notificationOccurred(.success)
     }
     
     func isGameOver() {
         if coins <= 0{
             showingModal = true
+            playSound(sound: "game-over", type: "mp3")
         }
     }
     
@@ -77,6 +87,7 @@ struct ContentView: View {
         highScore = 0
         coins = 100
         activateBet10()
+        playSound(sound: "chimeup", type: "mp3")
     }
     
     var body: some View {
@@ -125,10 +136,10 @@ struct ContentView: View {
                             .modifier(ImageModifier())
                             .opacity(animatingSymbol ? 1 : 0)
                             .offset(y: animatingSymbol ? 0 : -50)
-                            .animation(.easeOut(duration: Double.random(in: 0.5...0.7)))
-                            .onAppear {
+                            .animation(.easeOut(duration: Double.random(in: 0.3...0.5)))
+                            .onAppear(perform:  {
                                 self.animatingSymbol.toggle()
-                            }
+                            })
                     }
                     
                     HStack(alignment: .center, spacing: 0){
@@ -139,10 +150,11 @@ struct ContentView: View {
                                 .modifier(ImageModifier())
                                 .opacity(animatingSymbol ? 1 : 0)
                                 .offset(y: animatingSymbol ? 0 : -50)
-                                .animation(.easeOut(duration: Double.random(in: 0.7...0.9)))
-                                .onAppear {
+                                .animation(.easeOut(duration: Double.random(in: 0.5...0.7)))
+                                .onAppear(perform:  {
                                     self.animatingSymbol.toggle()
-                                }
+                                    playSound(sound: "riseup", type: "mp3")
+                                })
                         }
                         
                         Spacer()
@@ -154,10 +166,10 @@ struct ContentView: View {
                                 .modifier(ImageModifier())
                                 .opacity(animatingSymbol ? 1 : 0)
                                 .offset(y: animatingSymbol ? 0 : -50)
-                                .animation(.easeOut(duration: Double.random(in: 0.9...1.1)))
-                                .onAppear {
+                                .animation(.easeOut(duration: Double.random(in: 0.7...0.8)))
+                                .onAppear(perform:  {
                                     self.animatingSymbol.toggle()
-                                }
+                                })
                         }
                     }
                     .frame(maxWidth: 500)
