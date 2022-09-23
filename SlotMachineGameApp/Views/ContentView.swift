@@ -26,7 +26,6 @@ struct ContentView: View {
                         Text("Your\nCoins".uppercased())
                             .scoreLabelStyle()
                             .multilineTextAlignment(.trailing)
-                        
                         Text("100")
                             .scoreNumberStyle()
                             .modifier(ScoreNumberModifier())
@@ -40,13 +39,50 @@ struct ContentView: View {
                         Text("200")
                             .scoreNumberStyle()
                             .modifier(ScoreNumberModifier())
-                        
                         Text("High\nScore".uppercased())
                             .scoreLabelStyle()
                             .multilineTextAlignment(.leading)
                     }
                     .modifier(ScoreContainerModifier())
                 }
+                
+                VStack(alignment: .center, spacing: 0){
+                    ZStack {
+                        ReelView()
+                        Image("gfx-bell")
+                            .resizable()
+                            .modifier(ImageModifier())
+                    }
+                    
+                    HStack(alignment: .center, spacing: 0){
+                        ZStack {
+                            ReelView()
+                            Image("gfx-seven")
+                                .resizable()
+                                .modifier(ImageModifier())
+                        }
+                        
+                        Spacer()
+                        
+                        ZStack {
+                            ReelView()
+                            Image("gfx-cherry")
+                                .resizable()
+                                .modifier(ImageModifier())
+                        }
+                    }
+                    .frame(maxWidth: 500)
+                    
+                    Button {
+                        
+                    } label: {
+                        Image("gfx-spin")
+                            .resizable()
+                            .modifier(ImageModifier())
+                    }
+
+                }
+                .layoutPriority(2)
                 
                 Spacer()
                 
