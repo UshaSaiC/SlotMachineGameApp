@@ -80,12 +80,47 @@ struct ContentView: View {
                             .resizable()
                             .modifier(ImageModifier())
                     }
-
+                    
                 }
                 .layoutPriority(2)
                 
                 Spacer()
                 
+                
+                HStack {
+                    HStack(alignment: .center, spacing: 0) {
+                        Button {} label: {
+                            Text("20")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.white)
+                                .modifier(BetNumberModifier())
+                        }
+                        .modifier(BetCapsuleModifier())
+                        Image("gfx-casino-chips")
+                            .resizable()
+                            .opacity(0)
+                            .modifier(CasinoChipsModifier())
+                            .padding(5)
+                    }
+                    
+                    Spacer()
+                    
+                    HStack(alignment: .center, spacing: 0) {
+                        Image("gfx-casino-chips")
+                            .resizable()
+                            .opacity(1)
+                            .modifier(CasinoChipsModifier())
+                            .padding(5)
+                        Button {} label: {
+                            Text("10")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.yellow)
+                                .modifier(BetNumberModifier())
+                        }
+                        .modifier(BetCapsuleModifier())
+                    }
+                    
+                }
             }
             .overlay(
                 Button(action: {
