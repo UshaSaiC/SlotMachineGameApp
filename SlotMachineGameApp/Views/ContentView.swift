@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showingInfoView: Bool = false
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .top, endPoint: .bottom)
@@ -133,7 +136,7 @@ struct ContentView: View {
             )
             .overlay(
                 Button(action: {
-                    
+                    self.showingInfoView = true
                 }, label: {
                     Image(systemName: "info.circle")
                 })
@@ -142,6 +145,9 @@ struct ContentView: View {
             )
             .padding()
             .frame(maxWidth: 720)
+        }
+        .sheet(isPresented: $showingInfoView) {
+            InfoView()
         }
     }
 }
