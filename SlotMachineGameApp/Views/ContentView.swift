@@ -11,7 +11,8 @@ struct ContentView: View {
     
     let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
     
-    @State private var highScore: Int = 0
+    // integer property will return the integer value associated with HighScore key in user defaults
+    @State private var highScore: Int = UserDefaults.standard.integer(forKey: "HighScore")
     @State private var coins: Int = 100
     @State private var betAmount: Int = 10
     @State private var reels: Array = [0, 1, 2]
@@ -21,12 +22,6 @@ struct ContentView: View {
     @State private var showingModal: Bool = false
     
     func spinReels() {
-        
-        // reels[0] = Int.random(in: 0...symbols.count-1)
-        // reels[1] = Int.random(in: 0...symbols.count-1)
-        // reels[2] = Int.random(in: 0...symbols.count-1)
-        
-        // above lines can generate random integers.. but we can simplify this by using map as in below code
         reels = reels.map({ _ in
             Int.random(in: 0...symbols.count-1)
         })
@@ -50,6 +45,9 @@ struct ContentView: View {
     
     func newHighScore(){
         highScore = coins
+        // set proeprty is used to set value
+        // highScore is the value which would be stored in key named as HighScore in user defaults
+        UserDefaults.standard.set(highScore, forKey: "HighScore")
     }
     
     func playerLoses() {
@@ -72,6 +70,13 @@ struct ContentView: View {
         if coins <= 0{
             showingModal = true
         }
+    }
+    
+    func resetGame() {
+        UserDefaults.standard.set(highScore, forKey: "HighScore")
+        highScore = 0
+        coins = 100
+        activateBet10()
     }
     
     var body: some View {
@@ -196,7 +201,7 @@ struct ContentView: View {
             }
             .overlay(
                 Button(action: {
-                    
+                    self.resetGame()
                 }, label: {
                     Image(systemName: "arrow.2.circlepath.circle")
                 })
